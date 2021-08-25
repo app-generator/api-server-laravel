@@ -1,6 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\CheckSessionController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/users/register', RegisterController::class)->name('register');
+Route::post('/users/login', LoginController::class)->name('login');
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::post('/users/logout', LogoutController::class)->name('logout');
+    Route::post('/users/checkSession', CheckSessionController::class)->name('check-session');
 });
