@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+
+    runs-on: ubuntu-latest
+
+    name: Testing with PHP v${{ matrix.php }}
+
+    strategy:
+      matrix:
+        php:
+          - "7.3"
+          - "7.4"
+          - "8.0"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP v${{ matrix.hp }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          coverage: pcov
+
+      - uses: actions/cache@v2.1.5
+        name: Cache Composer dependencies
+        with:
+          path: ~/.composer/cache/files
+          key: composer-${{ hashFiles('composer.json') }}
+
+      - name: Copy environment variables
+        run: |
+          cp .env.example .env
+
+      - name: Install dependencies
+        run: |
+          composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Create SQLite database file
+        run: |
+          touch database/database.sqlite
+
+      - name: Generate the keys
+        run: |
+          php artisan key:generate
+
+      - name: Link storage
+        run: |
+          php artisan storage:link
+
+      - name: Start the webserver
+        run: |
+          php artisan serve &
+
+      - name: Run tests
+        run: |
+          vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
