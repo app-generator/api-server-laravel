@@ -7,7 +7,7 @@ Simple starter built with PHP (Laravel), Sqlite3 and JWT.
 
 ## ✨ Requirements
 
-- PHP 7.3+
+- PHP 7.4+
 
 ## 🚀 Installation
 
