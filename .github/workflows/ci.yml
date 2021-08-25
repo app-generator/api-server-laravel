@@ -53,6 +53,7 @@ jobs:
       - name: Generate the keys
         run: |
           php artisan key:generate
+          php artisan jwt:secret
 
       - name: Link storage
         run: |
