@@ -37,4 +37,19 @@ Run migrations using `artisan migrate`:
 php artisan migrate
 ```
 
-You're now ready! 👩‍🚀
+<br />
+
+## Troubleshooting
+
+To have a successfull compilation of this product make sure you have the following PHP extentions installed and enabled:
+
+- `php-xml` - required by Php-Unit
+- `php7.4-sqlite` - The SQLite driver required by Laravel ORM
+
+```bash
+$ # Php XML - required by Php Unit
+$ sudo apt install php-xml php-cli php-mbstring php7.4-sqlite
+```
+
+---
+Laravel API Server - provided by UPDIVISION and [App Generator](https://updivision.com/)
