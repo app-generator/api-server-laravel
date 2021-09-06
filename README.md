@@ -8,6 +8,9 @@ Simple starter built with PHP (Laravel), Sqlite3 and JWT.
 ## ✨ Requirements
 
 - PHP 7.4+
+- Extensions (check the #Troubleshooting section for installation info)
+  - `php-xml`
+  - `php7.4-sqlite`
 
 ## 🚀 Installation
 
@@ -38,6 +41,12 @@ php artisan migrate
 ```
 
 <br />
+
+Start the API server
+
+```bash
+$ php -S localhost:5000 server.php
+```
 
 ## Troubleshooting
 
