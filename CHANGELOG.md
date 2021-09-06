@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.0.2] 2021-09-01
+### Env Improvements
+
+- README update - added `Troubleshooting` section
+
 ## [0.0.1] 2021-09-01
 ### First Release
 
