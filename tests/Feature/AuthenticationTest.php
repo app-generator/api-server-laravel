@@ -36,16 +36,16 @@ class AuthenticationTest extends TestCase
         $response->assertOk();
 
         $response->assertJsonStructure([
-            'access_token',
-            'token_type',
-            'expires_in',
+            'success',
+            'token',
+            'user',
         ]);
     }
 
     public function test_logout()
     {
         $this->post(route('api.logout'))
-            ->assertStatus(401);
+            ->assertJson(['success' => false]);
 
         $token = Auth::login(
             $user = User::factory()->create(['email' => 'a@b.com'])
@@ -63,7 +63,7 @@ class AuthenticationTest extends TestCase
     public function test_session_check()
     {
         $this->post(route('api.check-session'))
-            ->assertStatus(401);
+            ->assertJson(['success' => false]);
 
         $token = Auth::login(
             $user = User::factory()->create(['email' => 'a@b.com'])
