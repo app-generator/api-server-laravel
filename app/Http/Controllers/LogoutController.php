@@ -15,8 +15,18 @@ class LogoutController extends Controller
      */
     public function __invoke(Request $request)
     {
+        if (! $request->user()) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'User is not logged on.',
+            ]);
+        }
+
         Auth::logout(true);
 
-        return response()->json();
+        return response()->json([
+            'success' => true,
+            'msg' => 'Token revoked.',
+        ]);
     }
 }
