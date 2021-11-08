@@ -16,13 +16,15 @@ class LoginController extends Controller
     public function __invoke(Request $request)
     {
         if (! $token = Auth::attempt($request->only('email', 'password'))) {
-            abort(401);
+            return response()->json([
+                'success' => false,
+                'msg' => 'Wrong credentials.',
+            ]);
         }
 
         return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => Auth::factory()->getTTL() * 60,
+            'success' => true,
+            'token' => $token,
             'user' => Auth::setToken($token)->user(),
         ]);
     }
