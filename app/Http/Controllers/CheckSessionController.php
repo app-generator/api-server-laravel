@@ -14,6 +14,15 @@ class CheckSessionController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return response()->json();
+        if (! $request->user()) {
+            return response()->json([
+                'success' => false,
+                'msg' => 'User is not logged in.',
+            ]);
+        }
+
+        return response()->json([
+            'success' => true,
+        ]);
     }
 }
