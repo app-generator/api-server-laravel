@@ -16,13 +16,39 @@ class RegisterController extends Controller
     public function __invoke(Request $request)
     {
         $request->validate([
-            'username' => ['nullable', 'string', 'unique:users'],
-            'email' => ['required', 'email', 'unique:users'],
+            'username' => ['nullable', 'string'],
+            'email' => ['required', 'email'],
             'password' => ['required', 'string'],
         ]);
 
-        User::create($request->all());
+        if (User::whereUsername($request->username)->exists()) {
+            return $this->failure('Username already taken.');
+        }
 
-        return response()->json([]);
+        if (User::whereEmail($request->email)->exists()) {
+            return $this->failure('E-Mail already taken.');
+        }
+
+        $user = User::create($request->all());
+
+        return response()->json([
+            'success' => true,
+            'userID' => $user->id,
+            'msg' => 'The user was successfully registered.',
+        ]);
+    }
+
+    /**
+     * Return a failure message.
+     *
+     * @param  string  $message
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function failure(string $message)
+    {
+        return response()->json([
+            'success' => false,
+            'msg' => $message,
+        ]);
     }
 }
