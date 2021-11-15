@@ -1,5 +1,9 @@
 {
-    "private": true,
+    "name": "api-server-nodejs",
+    "version": "1.0.0",
+    "description": "RESTful back-end for Node.js and Express.js",
+    "license": "MIT License",
+    "author": "AppSeed.us",
     "scripts": {
         "dev": "npm run development",
         "development": "mix",

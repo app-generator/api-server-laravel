@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.0.0] 2021-11-15
+### Stable Version
+
+- Tested with POSTMAN / React APPS
+  - [React Berry](https://github.com/app-generator/react-berry-dashboard)
+  - [React Purity](https://github.com/app-generator/react-purity-dashboard)
+  - [React Soft Dashboard](https://github.com/app-generator/react-soft-ui-dashboard)
+  - [React Datta Able](https://github.com/app-generator/react-datta-able)  
+
 ## [0.0.2] 2021-09-01
 ### Env Improvements
 

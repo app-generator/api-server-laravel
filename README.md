@@ -1,52 +1,78 @@
-Laravel API Server
-==================
 
-![CI](https://github.com/app-generator/api-server-laravel/workflows/CI/badge.svg?branch=master)
+# [Laravel API Server](https://docs.appseed.us/boilerplate-code/api-server/laravel)
 
-Simple starter built with PHP (Laravel), Sqlite3 and JWT.
+Simple Laravel API Server with JWT authentication, and **SQLite** persistance - Provided by **AppSeed** [App Generator](https://appseed.us) and [UPDIVISION](https://updivision.com/?ref=appseed)
 
-## ✨ Requirements
+
+<br />
+
+> Features:
+
+- [API Definition](https://docs.appseed.us/boilerplate-code/api-unified-definition) - the unified API structure implemented by this server
+- Simple, intuitive codebase - can be extended with ease.  
+- **Stack**: PHP 7.4+ / Laravel / Doctrine
+- JWT Authentication 
+
+<br />
+
+> Can be used with other [React Starters](https://appseed.us/apps/react) for a complete **Full-Stack** experience:
+
+| [React Node JS Berry](https://appseed.us/product/react-node-js-berry-dashboard) | [React Node Soft Dashboard](https://appseed.us/product/node-js-react-soft-dashboard) | [React Node Datta Able](https://github.com/app-generator/react-datta-able) |
+| --- | --- | --- |
+| [![React Node JS Berry](https://user-images.githubusercontent.com/51070104/124934742-aa392300-e00d-11eb-83bf-28d8b8704ec8.png)](https://appseed.us/product/react-node-js-berry-dashboard) | [![React Node Soft Dashboard](https://user-images.githubusercontent.com/51070104/137918158-54b20cce-1ac8-4279-ab89-aac0353ff7d3.png)](https://appseed.us/product/node-js-react-soft-dashboard) | [![React Node Datta Able](https://user-images.githubusercontent.com/51070104/125737710-834a9e6f-c39b-4f3b-a42a-9583ce2ce1da.png)](https://github.com/app-generator/react-datta-able)
+
+<br />
+
+![Nodejs API Server - Open-source Nodejs Starter provided by AppSeed.](https://user-images.githubusercontent.com/51070104/124414813-142aa180-dd5c-11eb-9279-6b082dadc51a.png)
+
+<br />
+
+## Requirements
 
 - PHP 7.4+
 - Extensions (check the #Troubleshooting section for installation info)
   - `php-xml`
   - `php7.4-sqlite`
-
-## 🚀 Installation
-
-```bash
-composer install && \
-cp .env.example .env && \
-php artisan key:generate
-```
-
-Authentication is based on JWT, so generating a secret in your `.env` is needed:
-
-```bash
-php artisan jwt:secret
-```
-
-## 🖥 Databases
-
-The default database driver is `SQLite`, so you need to create the database file:
-
-```bash
-touch database/database.sqlite
-```
-
-Run migrations using `artisan migrate`:
-
-```bash
-php artisan migrate
-```
-
+  
 <br />
 
-Start the API server
+## How to use the code
+
+**Step #1** - Clone the project
+
+```bash
+$ git clone https://github.com/app-generator/api-server-laravel.git
+$ cd api-server-laravel
+```
+
+**Step #2** - Install dependencies
+
+```bash
+$ composer install
+$ cp .env.example .env 
+$ php artisan key:generate
+```
+
+**Step #3** - Generate a `secret` key used by JWT Authentication Flow
+
+```
+$ php artisan jwt:secret
+```
+
+**Step #4** - Set up the database
+
+```bash
+$ touch database/database.sqlite
+$ php artisan migrate
+```
+
+**Step #5** - Start the server
 
 ```bash
 $ php -S localhost:5000 server.php
 ```
+
+<br />
 
 ## Troubleshooting
 
@@ -60,5 +86,73 @@ $ # Php XML - required by Php Unit
 $ sudo apt install php-xml php-cli php-mbstring php7.4-sqlite
 ```
 
+<br />
+
+## Codebase Structure
+
+```bash
+< ROOT >
+     | 
+     |-- app/          # Implements APP Bussiness Logic                    
+     |-- config/       # Configuration
+     |-- public/       # Public folder                         
+     |-- routes/       # Application ROutes                        
+     |-- tests/        # Tests                              
+     | 
+     |-- server.js     # API Entry Point
+     |-- .env          # Specify the ENV variables
+     |                        
+     |-- ************************************************************************
+```
+
+<br />
+
+## API
+
+For a fast set up, use this POSTMAN file: [api_sample](https://github.com/app-generator/api-server-nodejs-pro/blob/master/media/api.postman_collection.json)
+
+> **Register** - `api/users/register`
+
+```
+POST api/users/register
+Content-Type: application/json
+
+{
+    "username":"test",
+    "password":"pass", 
+    "email":"test@appseed.us"
+}
+```
+
+<br />
+
+> **Login** - `api/users/login`
+
+```
+POST /api/users/login
+Content-Type: application/json
+
+{
+    "password":"pass", 
+    "email":"test@appseed.us"
+}
+```
+
+<br />
+
+> **Logout** - `api/users/logout`
+
+```
+POST api/users/logout
+Content-Type: application/json
+authorization: JWT_TOKEN (returned by Login request)
+
+{
+    "token":"JWT_TOKEN"
+}
+```
+
+<br />
+
 ---
-Laravel API Server - provided by UPDIVISION and [App Generator](https://updivision.com/)
+**[Laravel API Server](https://docs.appseed.us/boilerplate-code/api-server/laravel)** - provided by AppSeed [App Generator](https://appseed.us)
