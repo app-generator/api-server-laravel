@@ -1,5 +1,5 @@
 
-# [Laravel API Server](https://docs.appseed.us/boilerplate-code/api-server/laravel)
+# [Laravel API Server](https://appseed.us/boilerplate-code/laravel-boilerplate)
 
 Simple Laravel API Server with JWT authentication, and **SQLite** persistance - Provided by **AppSeed** [App Generator](https://appseed.us) and [UPDIVISION](https://updivision.com/?ref=appseed)
 
@@ -23,7 +23,7 @@ Simple Laravel API Server with JWT authentication, and **SQLite** persistance - 
 
 <br />
 
-![Nodejs API Server - Open-source Nodejs Starter provided by AppSeed.](https://user-images.githubusercontent.com/51070104/124414813-142aa180-dd5c-11eb-9279-6b082dadc51a.png)
+![Laravel API Server - Open-source Nodejs Starter provided by AppSeed.](https://user-images.githubusercontent.com/51070104/141784950-b63f71bb-192e-4851-af6b-1b7a99226c9f.jpg)
 
 <br />
 
@@ -155,4 +155,4 @@ authorization: JWT_TOKEN (returned by Login request)
 <br />
 
 ---
-**[Laravel API Server](https://docs.appseed.us/boilerplate-code/api-server/laravel)** - provided by AppSeed [App Generator](https://appseed.us)
+**[Laravel API Server](https://appseed.us/boilerplate-code/laravel-boilerplate)** - provided by AppSeed [App Generator](https://appseed.us)
