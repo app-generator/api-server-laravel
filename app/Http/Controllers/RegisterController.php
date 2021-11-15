@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -29,7 +30,9 @@ class RegisterController extends Controller
             return $this->failure('E-Mail already taken.');
         }
 
-        $user = User::create($request->all());
+        $user = User::create(array_merge($request->all(), [
+            'password' => Hash::make($request->password),
+        ]));
 
         return response()->json([
             'success' => true,
