@@ -12,6 +12,7 @@ class AuthenticationTest extends TestCase
     {
         $response = $this->post(route('api.register'), [
             'email' => 'a@b.com',
+            'username' => 'test',
             'password' => 'password',
         ]);
 
@@ -19,6 +20,7 @@ class AuthenticationTest extends TestCase
 
         $this->assertDatabaseHas('users', [
             'email' => 'a@b.com',
+            'username' => 'test',
         ]);
     }
 
