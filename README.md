@@ -1,7 +1,7 @@
 
 # [Laravel API Server](https://appseed.us/boilerplate-code/laravel-boilerplate)
 
-Simple Laravel API Server with JWT authentication, and **SQLite** persistance - Provided by **AppSeed** [App Generator](https://appseed.us) and [UPDIVISION](https://updivision.com/?ref=appseed)
+Simple Laravel API Server with JWT authentication, and **SQLite** persistance - Provided by **AppSeed** [App Generator](https://appseed.us) and [UPDIVISION](https://updivision.com/?ref=appseed).
 
 
 <br />
