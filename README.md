@@ -76,7 +76,7 @@ $ php -S localhost:5000 server.php
 
 ## Troubleshooting
 
-To have a successfull compilation of this product make sure you have the following PHP extentions installed and enabled:
+To have a successful compilation of this product, make sure you have the following PHP extensions installed and enabled:
 
 - `php-xml` - required by Php-Unit
 - `php7.4-sqlite` - The SQLite driver required by Laravel ORM
