@@ -1,7 +1,7 @@
 
 # [Laravel API Server](https://appseed.us/boilerplate-code/laravel-boilerplate)
 
-Simple Laravel API Server with JWT authentication, and **SQLite** persistance - Provided by **AppSeed** [App Generator](https://appseed.us) and [UPDIVISION](https://updivision.com/?ref=appseed).
+Simple Laravel API Server with JWT authentication, and **SQLite** persistence - Provided by **AppSeed** [App Generator](https://appseed.us) and [UPDIVISION](https://updivision.com/?ref=appseed).
 
 
 <br />
@@ -99,7 +99,7 @@ $ sudo apt install php-xml php-cli php-mbstring php7.4-sqlite
      |-- routes/       # Application ROutes                        
      |-- tests/        # Tests                              
      | 
-     |-- server.js     # API Entry Point
+     |-- server.php    # API Entry Point
      |-- .env          # Specify the ENV variables
      |                        
      |-- ************************************************************************
@@ -109,7 +109,7 @@ $ sudo apt install php-xml php-cli php-mbstring php7.4-sqlite
 
 ## API
 
-For a fast set up, use this POSTMAN file: [api_sample](https://github.com/app-generator/api-server-nodejs-pro/blob/master/media/api.postman_collection.json)
+For a fast set up, use this POSTMAN file: [api_sample]([api_sample](https://github.com/app-generator/api-unified-definition/blob/main/api.postman_collection.json))
 
 > **Register** - `api/users/register`
 
