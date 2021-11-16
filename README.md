@@ -99,7 +99,7 @@ $ sudo apt install php-xml php-cli php-mbstring php7.4-sqlite
      |-- routes/       # Application ROutes                        
      |-- tests/        # Tests                              
      | 
-     |-- server.js     # API Entry Point
+     |-- server.php    # API Entry Point
      |-- .env          # Specify the ENV variables
      |                        
      |-- ************************************************************************
