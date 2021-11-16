@@ -109,7 +109,7 @@ $ sudo apt install php-xml php-cli php-mbstring php7.4-sqlite
 
 ## API
 
-For a fast set up, use this POSTMAN file: [api_sample](https://github.com/app-generator/api-server-nodejs-pro/blob/master/media/api.postman_collection.json)
+For a fast set up, use this POSTMAN file: [api_sample]([api_sample](https://github.com/app-generator/api-unified-definition/blob/main/api.postman_collection.json))
 
 > **Register** - `api/users/register`
 
